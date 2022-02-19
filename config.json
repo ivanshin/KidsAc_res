@@ -1,5 +1,4 @@
 {
-    "host_ip": "localhost",
-    "host_port": "8000", 
-    "callback_url": "127.0.0.1:8000/predictions"
+    "path_to_db_tables" : "tmp_data",
+    "path_to_preproccesed_tables": "tmp_data"
 }

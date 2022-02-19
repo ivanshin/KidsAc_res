@@ -1,8 +1,16 @@
 import requests
-from fastapi import APIRouter, FastAPI, Depends
+from fastapi import APIRouter, FastAPI
+
 from layers.model_layer import make_predicts_pipeline
 from layers.data_preproc_layer import main_preproc_pipeline
+from layers.config_layer import get_path_to_db_tbs, get_path_to_pp_tbs
+
 from entity_models.callback_request_model import CallbackRequest
+
+
+
+PATH_TO_DB_TABLES = get_path_to_db_tbs()
+PATH_TO_PREPROCCESED_TABLES = get_path_to_pp_tbs()
 
 
 app = FastAPI(title= 'Churn prediction API', version= '0.0.1', openapi_url= '/openapi.json')
