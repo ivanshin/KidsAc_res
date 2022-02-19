@@ -1,0 +1,1 @@
+This is simple web service for churn predictions, based on tree-based ml models.
