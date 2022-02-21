@@ -1,5 +1,7 @@
+import imp
 import requests
 from fastapi import APIRouter, FastAPI
+import asyncio
 
 from layers.model_layer import make_predicts_pipeline
 from layers.data_preproc_layer import main_preproc_pipeline
@@ -68,12 +70,11 @@ async def make_predictions(arg: CallbackRequest):
     #await main_preproc_pipeline('')
     #results = await make_predicts_pipeline(path_to_preproccesed_table= 'tmp_data')
 
-    results = emul_procces()
+    results = await emul_procces()
 
-    req_emul = requests.post(url= arg.callback_url, json= results, timeout= None)
+    requests.post(url= arg.callback_url, json= results, timeout= None)
 
-
-    return 0
+    return
 
     #req = requests.post(url= arg.callback_url, json= results, timeout= None)
 
