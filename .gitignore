@@ -12124,3 +12124,17 @@ test_utils/__pycache__/callback_service_test.cpython-310-pytest-7.0.1.pyc
 .venv/Lib/site-packages/fastapi-0.74.0.dist-info/INSTALLER
 .venv/Lib/site-packages/fastapi/middleware/__pycache__/asyncexitstack.cpython-310.pyc
 .venv/Lib/site-packages/fastapi/middleware/asyncexitstack.py
+.venv/Lib/site-packages/uvicorn-0.17.5.dist-info/WHEEL
+.venv/Lib/site-packages/uvicorn-0.17.5.dist-info/top_level.txt
+.venv/Lib/site-packages/uvicorn-0.17.5.dist-info/REQUESTED
+.venv/Lib/site-packages/uvicorn-0.17.5.dist-info/RECORD
+.venv/Lib/site-packages/uvicorn-0.17.5.dist-info/METADATA
+.venv/Lib/site-packages/uvicorn-0.17.5.dist-info/LICENSE.md
+.venv/Lib/site-packages/uvicorn-0.17.5.dist-info/INSTALLER
+.venv/Lib/site-packages/uvicorn-0.17.5.dist-info/entry_points.txt
+.venv/Lib/site-packages/click-8.0.4.dist-info/WHEEL
+.venv/Lib/site-packages/click-8.0.4.dist-info/top_level.txt
+.venv/Lib/site-packages/click-8.0.4.dist-info/RECORD
+.venv/Lib/site-packages/click-8.0.4.dist-info/METADATA
+.venv/Lib/site-packages/click-8.0.4.dist-info/LICENSE.rst
+.venv/Lib/site-packages/click-8.0.4.dist-info/INSTALLER
