@@ -12116,3 +12116,11 @@ test_utils/__pycache__/callback_service_test.cpython-310-pytest-7.0.1.pyc
 .venv/Lib/site-packages/tomli-2.0.1.dist-info/WHEEL
 .venv/Scripts/py.test.exe
 .venv/Scripts/pytest.exe
+.venv/Lib/site-packages/fastapi-0.74.0.dist-info/WHEEL
+.venv/Lib/site-packages/fastapi-0.74.0.dist-info/REQUESTED
+.venv/Lib/site-packages/fastapi-0.74.0.dist-info/RECORD
+.venv/Lib/site-packages/fastapi-0.74.0.dist-info/METADATA
+.venv/Lib/site-packages/fastapi-0.74.0.dist-info/LICENSE
+.venv/Lib/site-packages/fastapi-0.74.0.dist-info/INSTALLER
+.venv/Lib/site-packages/fastapi/middleware/__pycache__/asyncexitstack.cpython-310.pyc
+.venv/Lib/site-packages/fastapi/middleware/asyncexitstack.py
