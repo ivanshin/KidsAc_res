@@ -16,3 +16,9 @@ async def post_results(data : dict):
         json.dump(data, fp)
 
 
+@app.post("/callback_emul")
+async def post_results(data : dict):
+    with open('data_test.json', 'w') as fp:
+        json.dump(data, fp)
+
+

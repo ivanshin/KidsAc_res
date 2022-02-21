@@ -52,18 +52,32 @@ def not_secret_data():
     return 'Not secret data'
 
 
+async def emul_procces():
+    emulate_res = {'1': []}
+    for i in range(0, 10000000):
+        emulate_res['1'].append(i)
+    
+    return emulate_res
+
+
 @api_router.post("/predictions")
 async def make_predictions(arg: CallbackRequest):
 
     """ Get user ID's of possible churn and send to callback url"""
     
     #await main_preproc_pipeline('')
-    results = await make_predicts_pipeline(path_to_preproccesed_table= 'tmp_data')
+    #results = await make_predicts_pipeline(path_to_preproccesed_table= 'tmp_data')
 
-    req = requests.post(url= arg.callback_url, json= results, timeout= None)
+    results = emul_procces()
 
-    return req.status_code
-    #return results
+    req_emul = requests.post(url= arg.callback_url, json= results, timeout= None)
+
+
+    return 0
+
+    #req = requests.post(url= arg.callback_url, json= results, timeout= None)
+
+    #return req.status_code
     
 
 app.include_router(api_router)
