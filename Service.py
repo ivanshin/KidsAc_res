@@ -59,7 +59,9 @@ async def emul_procces():
     for i in range(0, 10000000):
         emulate_res['1'].append(i)
     
-    return emulate_res
+    #TODO отправить асинхронный ПОСТ на callback_url
+
+    return
 
 
 @api_router.post("/predictions")
@@ -70,9 +72,10 @@ async def make_predictions(arg: CallbackRequest):
     #await main_preproc_pipeline('')
     #results = await make_predicts_pipeline(path_to_preproccesed_table= 'tmp_data')
 
-    results = await emul_procces()
+    asyncio.create_task(emul_procces())
+    
 
-    requests.post(url= arg.callback_url, json= results, timeout= None)
+    #requests.post(url= arg.callback_url, json= results, timeout= None)
 
     return
 
