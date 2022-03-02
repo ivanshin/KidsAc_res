@@ -1,4 +1,4 @@
-import imp
+from http import HTTPStatus
 import requests
 from fastapi import APIRouter, FastAPI
 import asyncio
@@ -54,12 +54,12 @@ def not_secret_data():
     return 'Not secret data'
 
 
-async def emul_procces():
+async def emul_procces(arg):
     emulate_res = {'1': []}
     for i in range(0, 10000000):
         emulate_res['1'].append(i)
     
-    #TODO отправить асинхронный ПОСТ на callback_url
+    req = requests.post(url= arg.callback_url, json= emulate_res, timeout= None)
 
     return
 
@@ -72,12 +72,12 @@ async def make_predictions(arg: CallbackRequest):
     #await main_preproc_pipeline('')
     #results = await make_predicts_pipeline(path_to_preproccesed_table= 'tmp_data')
 
-    asyncio.create_task(emul_procces())
+    asyncio.create_task(emul_procces(arg))
     
 
     #requests.post(url= arg.callback_url, json= results, timeout= None)
 
-    return
+    return HTTPStatus.OK
 
     #req = requests.post(url= arg.callback_url, json= results, timeout= None)
 
