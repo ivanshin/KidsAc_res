@@ -163,7 +163,9 @@ def join_result_tables():
     f_faue = pd.read_csv('pp_faue.csv')
 
     merged_res = f_fs.merge(f_fca, how= 'left', validate='one_to_one', on= 'user_id')
+    print(merged_res.shape)
     merged_res = merged_res.merge(f_faue, how= 'left', validate='one_to_one', on= 'user_id')
+    print(merged_res.shape)
     
     merged_res = merged_res.drop(merged_res[merged_res['still_active'] == False].index)
 
@@ -186,15 +188,21 @@ def final_data_cleaning(df):
     df.bool_isMember_of_campaign.fillna(-1, inplace= True)
     df.bool_is_school.fillna(-1, inplace= True)
 
+    
     active_users = df[df['still_active'] == True]
-    active_users_ids = active_users.user_id
+    
     active_users = active_users.drop(columns=
+    
                   ['still_active', 'bool_is_cancelled', 'mean_paid_period_days'])
-
+    
+    
+    
     return active_users
+    
+    #return df
 
 
-async def main_preproc_pipeline(path_to_tables):
+def main_preproc_pipeline(path_to_tables):
     
     """ Main pipeline """
 
@@ -229,3 +237,5 @@ async def main_preproc_pipeline(path_to_tables):
 
     csv_writer(result, "fs_fca_faue_active_usrs.csv")
 
+
+#main_preproc_pipeline('tmp_data')
